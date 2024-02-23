@@ -1,0 +1,60 @@
+[[language]]
+name = "cpp"
+formatter = { command = "clang-format", args = ["--style=file:/Users/marat/.config/helix/.clang_format"]}
+auto-format = true
+file-types = ["cpp", "cxx", "c"]
+comment-token = "//"
+
+
+[[language]]
+name = "c-sharp"
+scope = "source.cs"
+injection-regex = "c-?sharp"
+roots = ["sln", "csproj"]
+file-types = ["cs"]
+comment-token = "//"
+language-servers = [ "omnisharp" ]
+
+[language-server.omnisharp]
+command =  "dotnet"
+args = ["/Users/marat/.omnisharp/Omnisharp.dll", "-lsp"]
+
+[[language]]
+name = "go"
+formatter = { command = "gofmt" }
+auto-format = true
+language-servers = [ 
+  "gopls",
+  "golangci-lint-lsp" 
+]
+#language-servers = [ "gopls", "golangci-lint"]
+
+[language-server.golangci-lint-lsp]
+command = "golangci-lint-langserver"
+
+[language-server.golangci-lint-lsp.config]
+command = [
+  "golangci-lint",
+  "run",
+
+  "--disable", "typecheck",
+
+  "--enable", "bodyclose",
+  "--enable", "decorder",
+  "--enable", "dupl",
+  "--enable", "funlen",
+  "--enable", "godox",
+  "--enable", "gosec",
+  "--enable", "ireturn",
+  "--enable", "maintidx",
+  "--enable", "revive",
+  "--enable", "sqlclosecheck",
+  "--enable", "wastedassign",
+  "--enable", "wrapcheck",
+
+  "--out-format",
+  "json",
+
+  "--issues-exit-code=1",
+]
+

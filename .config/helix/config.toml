@@ -1,0 +1,35 @@
+theme = "ayu_mirage"
+
+[editor]
+line-number = "relative"
+cursorline = true
+mouse = false
+bufferline = "always"
+preview-completion-insert = false
+completion-replace = false
+
+[keys.normal]
+# Y = ":pipe ehe=$(</dev/stdin); echo $ehe | pbcopy; echo -n $ehe"
+Y = ":pipe ehe=$(</dev/stdin); echo $ehe | pbcopy; printf '%s' \"$ehe\""
+
+[editor.soft-wrap] 
+enable = true
+
+[editor.statusline]
+mode.normal = "normal"
+mode.insert = "insert"
+mode.select = "select"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+character = "╎"
+render = true
+
+[editor.file-picker]
+hidden = false
+ignore = false
+git-ignore = false
