@@ -2,6 +2,16 @@
 
 The files are managed using GNU Stow and should prove useful when doing setup of a new system
 
+## Features
+
+The config is used on OSX using Iterms2 and includes configs for following: 
+
+- Iterm2 (color theme)
+- Helix text editor
+- Tmux
+- Zsh (requires oh-my-zsh installed)
+- Fonts
+
 ## Install 
 
 ### Git 
