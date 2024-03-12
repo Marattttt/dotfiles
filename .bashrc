@@ -27,10 +27,10 @@ unset rc
 
 alias kys="cd ~; cls;"
 alias kyss="exit"
-alias cdtest="cd /Users/marat/dev/testing/"
+alias cdtest="cd /home/marat/dev/test"
 alias cd..="cd .."
-alias cdproj="cd /Users/marat/dev/projects"
-alias cddev="cd /Users/marat/dev"
+alias cdproj="cd /home/marat/dev/projects"
+alias cddev="cd /home/marat/dev"
 alias cdwork="cd /Users/marat/dev/work/"
 alias browser="open -a /Applications/Vivaldi.app/"
 alias gcc="gcc-13"
