@@ -26,7 +26,7 @@ normal = "block"
 select = "underline"
 
 [editor.indent-guides]
-character = "╎"
+character = "|"
 render = true
 
 [editor.file-picker]
