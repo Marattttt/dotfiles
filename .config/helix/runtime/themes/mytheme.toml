@@ -1,3 +1,7 @@
 inherits = "ayu_mirage"
 
 "ui.background"={}
+
+# slkdjfjklds
+[palette]
+gray = "#798091"

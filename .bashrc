@@ -26,15 +26,13 @@ fi
 unset rc
 
 
+# Zoxide setup
+eval "$(zoxide init bash --cmd cd)"
+
 alias kys="cd ~; cls;"
 alias kyss="exit"
-alias cdtest="cd /home/marat/dev/test"
-alias cd..="cd .."
-alias cdproj="cd /home/marat/dev/projects"
-alias cddev="cd /home/marat/dev"
-alias cdwork="cd /Users/marat/dev/work/"
-alias browser="open -a /Applications/Vivaldi.app/"
-alias gcc="gcc-13"
 alias cls="clear && printf '\e[3J'"
+alias open="xdg-open"
 alias copy="wl-copy"
 alias paste="wl-paste"
+
