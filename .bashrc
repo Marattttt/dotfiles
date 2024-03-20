@@ -25,9 +25,7 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-
-# Zoxide setup
-eval "$(zoxide init bash --cmd cd)"
+. "$HOME/.cargo/env"
 
 alias kys="cd ~; cls;"
 alias kyss="exit"

@@ -25,7 +25,7 @@ formatter = { command = "gofmt" }
 auto-format = true
 language-servers = [ 
   "gopls",
-  # "golangci-lint-lsp" 
+  "golangci-lint-lsp" 
 ]
 #language-servers = [ "gopls", "golangci-lint"]
 
