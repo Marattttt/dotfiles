@@ -21,13 +21,12 @@ args = ["/Users/marat/.omnisharp/Omnisharp.dll", "-lsp"]
 
 [[language]]
 name = "go"
-formatter = { command = "gofmt" }
+formatter = { command = "gofumpt" }
 auto-format = true
 language-servers = [ 
   "gopls",
   "golangci-lint-lsp" 
 ]
-#language-servers = [ "gopls", "golangci-lint"]
 
 [language-server.golangci-lint-lsp]
 command = "golangci-lint-langserver"
