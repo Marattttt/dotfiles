@@ -29,6 +29,7 @@ unset rc
 
 alias kys="cd ~; cls;"
 alias kyss="exit"
+alias lsa="ls -lah"
 alias cls="clear && printf '\e[3J'"
 alias open="xdg-open"
 alias copy="wl-copy"
