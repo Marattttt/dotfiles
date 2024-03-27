@@ -1,29 +1,17 @@
 # My dotfiles
 
-The files are managed using GNU Stow and should prove useful when doing setup of a new system
+Files are managed using GNU Stow and should prove useful when doing setup of a new system
 
-## Features
+## Overview
 
-The config is used on OSX using Iterms2 and includes configs for following: 
-
-- Iterm2 (color theme)
-- Helix text editor
-- Tmux
-- Zsh (requires oh-my-zsh installed)
-- Fonts
-
-## Install 
+This config is in use for Fedora linux 39 + Hyprland + Kitty + NeoVim + Helix + Tmux setup
 
 ### Git 
 install git and clone the repo into ~/.dotfiles directory
 
 ### Stow
 
-Install GNU Stow with a package manager, in my case - Homebrew
-
-```bash
-  brew install stow
-```
+Install GNU Stow with a package manager
 
 ### Preparation
 
@@ -36,6 +24,4 @@ Inside the ~/.dotfiles directory, run
 ```bash
   stow .
 ```
-
-In case of conflicts, refer to [Preparation](#preparation)
 

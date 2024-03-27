@@ -34,4 +34,3 @@ alias cls="clear && printf '\e[3J'"
 alias open="xdg-open"
 alias copy="wl-copy"
 alias paste="wl-paste"
-
