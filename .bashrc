@@ -12,6 +12,8 @@ fi
 export PATH="$PATH:/home/marat/go/bin:/home/marat/scripts"
 export GOCACHE=$(go env GOGACHE)
 
+export EDITOR="nvim"
+
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
@@ -26,6 +28,8 @@ fi
 unset rc
 
 . "$HOME/.cargo/env"
+
+# wal -i /home/marat/Pictures/Wallpapers/a_mountain_with_trees_and_moon.jpg > /dev/null
 
 alias kys="cd ~; cls;"
 alias kyss="exit"
