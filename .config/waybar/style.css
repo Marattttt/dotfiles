@@ -1,14 +1,15 @@
 * {
-  /* `otf-font-awesome` is required to be installed for icons */
-  font-family: "Noto Sans CJK KR Regular";
+   /* `otf-font-awesome` is required to be installed for icons  */
+  /* font-family: "Noto Sans CJK KR Regular"; */
+  font-family: "Arial";
   font-size: 13px;
-  min-height: 0;
+  min-height: 2em;
 }
 
 window#waybar {
   background: transparent;
-  /*    background-color: rgba(43, 48, 59, 0.5); */
-  /*    border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+     /* background-color: rgba(43, 48, 59, 0.5); */
+     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
   color: #ffffff;
   transition-property: background-color;
   transition-duration: .5s;
@@ -23,9 +24,9 @@ window#waybar.hidden {
 }
 
 #window {
-  margin: 2;
-  padding-left: 8;
-  padding-right: 8;
+  margin: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
   background-color: rgba(0,0,0,0.3);
   font-size:14px;
   font-weight: bold;
@@ -48,13 +49,13 @@ button:hover {
 #workspaces button {
   padding: 0 0.7em;
   margin: 0 2px;
-  /* border: solid 1px #ffcc66; */
   border: solid 1px transparent;
   border-radius: 0.75em;
   color: #aeaeae;
 }
 
 #workspaces button:hover {
+  background-color: #5a447f;
 }
 
 #workspaces button.active {
@@ -78,6 +79,7 @@ button:hover {
 #battery,
 #cpu,
 #memory,
+#keyboard-state,
 #disk,
 #temperature,
 #backlight,
@@ -91,8 +93,8 @@ button:hover {
 #scratchpad,
 #mpd {
   margin: 2px;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
   background-color: rgba(0,0,0,0.3);
   color: #ffffff;
 }

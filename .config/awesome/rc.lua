@@ -24,6 +24,13 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 local mytable = awful.util.table or gears.table -- 4.{0,1} compatibility
 
+-- Keyboard layout
+local keyboard_layout = require("keyboard_layout")
+
+local kbdcfg = keyboard_layout.kbdcfg({ type = "tui" })
+kbdcfg.add_primary_layout("English", "US", "us")
+kbdcfg.add_primary_layout("Russian", "RU", "ru")
+kbdcfg.bind()
 -- }}}
 
 -- {{{ Error handling
@@ -111,14 +118,14 @@ local browser = "firefox"
 awful.util.terminal = terminal
 awful.util.tagnames = { "1", "2", "3", "4", "5" }
 awful.layout.layouts = {
-	awful.layout.suit.floating,
+	awful.layout.suit.spiral,
 	-- awful.layout.suit.tile,
 	-- awful.layout.suit.tile.left,
 	-- awful.layout.suit.tile.bottom,
 	-- awful.layout.suit.tile.top,
 	--awful.layout.suit.fair,
 	--awful.layout.suit.fair.horizontal,
-	awful.layout.suit.spiral,
+	awful.layout.suit.floating,
 	--awful.layout.suit.spiral.dwindle,
 	--awful.layout.suit.max,
 	--awful.layout.suit.max.fullscreen,
@@ -295,9 +302,9 @@ root.buttons(mytable.join(
 -- {{{ Key bindings
 
 globalkeys = mytable.join(
-	-- Destroy all notifications
+	-- Switch keyboard layout
 	awful.key({ "Control" }, "space", function()
-		naughty.destroy_all_notifications()
+		kbdcfg.switch_next()
 	end, { description = "destroy all notifications", group = "hotkeys" }),
 	-- Take a screenshot
 	-- https://github.com/lcpz/dots/blob/master/bin/screenshot
@@ -319,13 +326,13 @@ globalkeys = mytable.join(
 	awful.key({ modkey }, "Escape", awful.tag.history.restore, { description = "go back", group = "tag" }),
 
 	-- Non-empty tag browsing
-	awful.key({ altkey }, "Left", function()
-		lain.util.tag_view_nonempty(-1)
-	end, { description = "view  previous nonempty", group = "tag" }),
-	awful.key({ altkey }, "Right", function()
-		lain.util.tag_view_nonempty(1)
-	end, { description = "view  previous nonempty", group = "tag" }),
-
+	-- awful.key({ altkey }, "Left", function()
+	-- 	lain.util.tag_view_nonempty(-1)
+	-- end, { description = "view  previous nonempty", group = "tag" }),
+	-- awful.key({ altkey }, "Right", function()
+	-- 	lain.util.tag_view_nonempty(1)
+	-- end, { description = "view  previous nonempty", group = "tag" }),
+	--
 	-- Default client focus
 	awful.key({ altkey }, "j", function()
 		awful.client.focus.byidx(1)
@@ -496,15 +503,15 @@ globalkeys = mytable.join(
 	end, { description = "-10%", group = "hotkeys" }),
 
 	-- ALSA volume control
-	awful.key({ altkey }, "Up", function()
-		os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
+	awful.key({}, "XF86AudioRaiseVolume", function()
+		os.execute(string.format("amixer -q set %s 5%%+", beautiful.volume.channel))
 		beautiful.volume.update()
 	end, { description = "volume up", group = "hotkeys" }),
-	awful.key({ altkey }, "Down", function()
-		os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
+	awful.key({}, "XF86AudioLowerVolume", function()
+		os.execute(string.format("amixer -q set %s 5%%-", beautiful.volume.channel))
 		beautiful.volume.update()
 	end, { description = "volume down", group = "hotkeys" }),
-	awful.key({ altkey }, "m", function()
+	awful.key({}, "XF86AudioMute", function()
 		os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
 		beautiful.volume.update()
 	end, { description = "toggle mute", group = "hotkeys" }),

@@ -1,5 +1,4 @@
 --[[
-
      Multicolor Awesome WM theme 2.0
      github.com/lcpz
 
@@ -16,7 +15,8 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme = {}
 theme.confdir = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
-theme.wallpaper = theme.confdir .. "/wall.png"
+theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/themes/multicolor/wall.png"
+-- theme.wallpaper = theme.confdir .. "wallpaper.jpeg"
 theme.font = "Terminus 8"
 theme.menu_bg_normal = "#000000"
 theme.menu_bg_focus = "#000000"
@@ -29,7 +29,7 @@ theme.fg_urgent = "#af1d18"
 theme.fg_minimize = "#ffffff"
 theme.border_width = dpi(1)
 theme.border_normal = "#1c2022"
-theme.border_focus = "#606060"
+theme.border_focus = "#10a0a0"
 theme.border_marked = "#3ca4d8"
 theme.menu_border_width = 0
 theme.menu_width = dpi(130)
@@ -111,19 +111,17 @@ theme.cal = lain.widget.cal({
 })
 
 -- Weather
---[[ to be set before use
 local weathericon = wibox.widget.imagebox(theme.widget_weather)
 theme.weather = lain.widget.weather({
-    city_id = 2643743, -- placeholder (London)
-    notification_preset = { font = "Terminus 10", fg = theme.fg_normal },
-    weather_na_markup = markup.fontfg(theme.font, "#eca4c4", "N/A "),
-    settings = function()
-        descr = weather_now["weather"][1]["description"]:lower()
-        units = math.floor(weather_now["main"]["temp"])
-        widget:set_markup(markup.fontfg(theme.font, "#eca4c4", descr .. " @ " .. units .. "°C "))
-    end
+	city_id = 2643743, -- placeholder (London)
+	notification_preset = { font = "Terminus 10", fg = theme.fg_normal },
+	weather_na_markup = markup.fontfg(theme.font, "#eca4c4", "N/A "),
+	settings = function()
+		descr = weather_now["weather"][1]["description"]:lower()
+		units = math.floor(weather_now["main"]["temp"])
+		widget:set_markup(markup.fontfg(theme.font, "#eca4c4", descr .. " @ " .. units .. "°C "))
+	end,
 })
---]]
 
 -- / fs
 --[[ commented because it needs Gio/Glib >= 2.54
@@ -331,8 +329,8 @@ function theme.at_screen_connect(s)
 			cpu.widget,
 			--fsicon,
 			--theme.fs.widget,
-			--weathericon,
-			--theme.weather.widget,
+			weathericon,
+			theme.weather.widget,
 			-- tempicon,
 			-- temp.widget,
 			-- -- baticon,

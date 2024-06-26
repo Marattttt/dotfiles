@@ -1,0 +1,7 @@
+#! /bin/bash
+
+if [ $WAYLAND_DISPLAY ]; then
+	echo "eheheh"
+else 
+	echo "not in wayland" 
+fi

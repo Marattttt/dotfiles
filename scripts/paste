@@ -1,0 +1,8 @@
+#! /bin/sh
+
+if [ -n ${WAYLAND_DISPLAY} ]; then
+	wl-paste
+else 
+	xclip -o -selection clipboard 
+fi
+

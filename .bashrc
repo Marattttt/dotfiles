@@ -9,6 +9,7 @@ fi
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
+export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:/home/marat/go/bin:/home/marat/scripts"
 export GOCACHE=$(go env GOGACHE)
 
@@ -36,5 +37,3 @@ alias kyss="exit"
 alias lsa="ls -lah"
 alias cls="clear && printf '\e[3J'"
 alias open="xdg-open"
-alias copy="wl-copy"
-alias paste="wl-paste"
