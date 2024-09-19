@@ -1,1 +1,0 @@
-../Dotfiles/scripts/generate_screenshot_name.sh
