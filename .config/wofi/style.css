@@ -85,6 +85,14 @@ window {
   outline: none;
 }
 
+#img:selected {
+    background: none;
+}
+
+#text:selected {
+    background: none;
+}
+
 .entry {
   margin: 5px;
 }
