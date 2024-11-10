@@ -4,9 +4,9 @@ Files are managed using GNU Stow and should prove useful when doing setup of a n
 
 ## Overview
 
-This config is in use for Fedora linux 39 + AweesomeWM + Kitty + NeoVim
+This config is in use for Arch linux + Hyprland + Kitty + NeoVim
 
-Also contains no longer in use configurations for Tmux, Helix and Hyprland 
+Also contains no longer in use configurations for Tmux, Helix and AwesomeWM 
 
 ### Git 
 install git and clone the repo into ~/.dotfiles directory
