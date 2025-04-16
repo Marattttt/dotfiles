@@ -1,4 +1,9 @@
 .git/
 node_modules/
+CMakeFiles/
+build/
+.cache/
+.venv/
+.gradle
 
 ! .env

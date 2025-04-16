@@ -31,9 +31,15 @@ M.config = function()
 			["<C-f>"] = cmp.mapping.scroll_docs(4),
 			["<C-Space>"] = cmp.mapping.complete(),
 			["<C-e>"] = cmp.mapping.abort(),
-			["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+			["<tab>"] = cmp.mapping.select_next_item(), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+			["<Down>"] = cmp.mapping.select_next_item(), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+			["<S-tab>"] = cmp.mapping.select_prev_item(),
+			["<Up>"] = cmp.mapping.select_prev_item(),
+
+			["<C-y>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 		}),
 		sources = cmp.config.sources({
+			{ name = "jupynium", priority = 1000 }, -- consider higher priority than LSP
 			{ name = "nvim_lsp" },
 			{ name = "nvim_lua" },
 			{ name = "luasnip" }, -- For luasnip users.
@@ -42,6 +48,15 @@ M.config = function()
 			{ name = "buffer" },
 			{ name = "path" },
 		}),
+
+		sorting = {
+			priority_weight = 1.0,
+			comparators = {
+				cmp.config.compare.score, -- Jupyter kernel completion shows prior to LSP
+				cmp.config.compare.recently_used,
+				cmp.config.compare.locality,
+			},
+		},
 	})
 
 	cmp.setup.cmdline(":", {

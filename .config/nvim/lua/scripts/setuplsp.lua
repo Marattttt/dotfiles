@@ -1,7 +1,7 @@
-require("lspconfig").lua_ls.setup {}
-require("lspconfig").ts_ls.setup {}
-require("lspconfig").clangd.setup {}
-require("lspconfig").cmake.setup {}
-require("lspconfig").gopls.setup {}
-require("lspconfig").pyright.setup {}
-require("lspconfig").tailwindcss.setup {}
+-- Automatically set up LSP servers
+local lspconfig = require("lspconfig")
+require("mason-lspconfig").setup_handlers({
+  function(server_name) -- Default handler for all servers
+    lspconfig[server_name].setup({})
+  end
+})

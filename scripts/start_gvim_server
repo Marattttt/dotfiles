@@ -1,0 +1,2 @@
+#!/bin/bash
+NVIM_IN_GODOT=1 kitty sh -c  "nvim --server /tmp/godot.pipe $1"
