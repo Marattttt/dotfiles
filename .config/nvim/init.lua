@@ -28,6 +28,8 @@ require("oil").setup({
 -- vim.cmd("colorscheme cyberdream")
 vim.cmd("colorscheme duskfox")
 
+require("gitsigns").setup({})
+
 require("trouble").setup()
 require("mason").setup()
 require("mason-lspconfig").setup()
