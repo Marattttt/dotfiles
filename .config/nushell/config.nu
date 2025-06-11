@@ -917,7 +917,7 @@ def format-json-lines [] {
 }
 def dcl [...ehe] {
     if $ehe == [] {
-        docker container list --format json | format-json-lines | from json | select ID Names Ports
+        docker container list --format json | format-json-lines | from json | select ID Names Ports Status
     } else {
         docker container list --format json | format-json-lines | from json | select ...$ehe
     }
