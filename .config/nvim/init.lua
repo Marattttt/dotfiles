@@ -2,8 +2,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.have_nerd_font = true
 vim.g.magma_image_provider = "kitty"
-vim.api.nvim_set_var('prettier#autoformat_require_pragma', 1)
-vim.api.nvim_set_var('prettier#autoformat', 1)
+-- vim.api.nvim_set_var('prettier#autoformat_require_pragma', 1)
+-- vim.api.nvim_set_var('prettier#autoformat', 1)
 
 vim.wo.number = true
 
@@ -21,6 +21,12 @@ require("config.lazydev")
 require("oil").setup({
 	view_options = {
 		show_hidden = true
+	},
+	columns = {
+		'icon',
+		-- 'permissions',
+		'size',
+		'mtime',
 	}
 })
 
@@ -35,6 +41,7 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 require('mini.surround').setup()
 require("nvim-ts-autotag").setup()
+require("ibl").setup()
 
 -- require('indent-o-matic').setup {
 -- 	-- The values indicated here are the defaults
@@ -59,8 +66,8 @@ require("nvim-ts-autotag").setup()
 -- 	-- 	console_config =
 -- 	--}
 -- })
+-- require('scripts.setupgodot')
 
 require("scripts.setuplsp")
-require('scripts.setupgodot')
 require("scripts.keymaps")
 require("scripts.autocommands")
