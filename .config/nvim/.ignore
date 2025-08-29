@@ -7,5 +7,7 @@ build/
 .cache/
 .venv/
 .gradle
+! .cpp_deps/**
+**/cpp_deps/**
 
-! .env
+| env

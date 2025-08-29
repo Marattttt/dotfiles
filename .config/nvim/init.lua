@@ -41,6 +41,7 @@ require("mason").setup()
 require("mason-lspconfig").setup()
 require('mini.surround').setup()
 require("nvim-ts-autotag").setup()
+require("image").setup()
 require("ibl").setup()
 
 -- require('indent-o-matic').setup {

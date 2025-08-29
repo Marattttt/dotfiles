@@ -111,6 +111,7 @@ path add /home/marat/.config/herd-lite/bin:$PATH
 $env.PHP_INI_SCAN_DIR = '/home/marat/.config/herd-lite/bin:$PHP_INI_SCAN_DIR'
 
 $env.ANDROID_HOME = '/home/marat/Android/Sdk'
+$env.NDK_HOME = '/home/marat/Android/Sdk/ndk/27.0.12077973'
 
 $env.ELECTRON_OZONE_PLATFORM_HINT = 'wayland'
 

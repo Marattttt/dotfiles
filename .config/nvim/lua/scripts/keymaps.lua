@@ -1,17 +1,29 @@
 local builtin = require('telescope.builtin')
 
+vim.keymap.set('n', 'j', 'gj', { noremap = true })
+vim.keymap.set('n', 'k', 'gk', { noremap = true })
+vim.keymap.set('v', 'j', 'gj', { noremap = true })
+vim.keymap.set('v', 'k', 'gk', { noremap = true })
+
 vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Search files' })
 vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Search buffers' })
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = 'Search help' })
 vim.keymap.set('n', '<leader>s/', builtin.live_grep, { desc = 'Search in all files' })
 vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = 'Search in diagnostics' })
-vim.keymap.set('n', '<leader>ss', builtin.lsp_workspace_symbols, { desc = 'Search in diagnostics' })
+vim.keymap.set('n', '<leader>ss', builtin.lsp_workspace_symbols, { desc = 'Search in sybols' })
 
 vim.keymap.set('n', 'gr', builtin.lsp_references, { desc = 'Go to references' })
 vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = 'Go to definition' })
 
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code actions' })
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'ReName' })
+
+
+vim.keymap.set('n', '<leader>pv', function()
+	local api = require('image')
+	local img = api.from_file(vim.api.nvim_buf_get_name(0))
+	img:render()
+end, { desc = 'PreView image' })
 
 -- local godot_path_handle = io.popen('flatpak info --show-location org.godotengine.Godot')
 -- local godot_path = godot_path_handle:read('*a')
